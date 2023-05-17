@@ -108,19 +108,19 @@ My solution to solve this problem will be the development of a data science proj
 
 ## 6.0 Top Data Insights
 
-<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/pricehist.png">
+<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/pricehist.png" width="600">
 
 Most diamonds falls under below 5000 price in the dataset and it is heavily sckewed on the right. 
 
-<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/scatter.png">
+<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/scatter.png" width="600">
 
 The price are heavily correlated with price but table value has a random effect on the price. 
 
-<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/heatmap.png">
+<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/heatmap.png" width="600">
 
 x, y, and z variable are highly correlated with each other and with carat variable which indicate multicolinearity of the variable.  
 
-<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/barplot.png">
+<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/barplot.png" width="600">
 
 Catergorical values distribution is not normal which might also be problematic especially incase of linear regression as the algorithms assume the normality of the data.
 
