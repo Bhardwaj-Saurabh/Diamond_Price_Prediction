@@ -120,7 +120,7 @@ The price are heavily correlated with price but table value has a random effect 
 
 x, y, and z variable are highly correlated with each other and with carat variable which indicate multicolinearity of the variable.  
 
-<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/barplot.png" width="600">
+<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/barplot.png">
 
 Catergorical values distribution is not normal which might also be problematic especially incase of linear regression as the algorithms assume the normality of the data.
 
