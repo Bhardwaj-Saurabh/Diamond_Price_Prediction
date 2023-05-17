@@ -43,51 +43,69 @@ Economic Factors: It is assumed that economic factors, such as inflation rates, 
 ## 4.0 Solution Strategy
 My solution to solve this problem will be the development of a data science project. This project will have a machine learning model which can predict the price of a diamond based on provided features.
 
-Step 01. Data Description: The missing values will be threated or removed. Finally, a initial data description will carried out to know the data. Therefore some calculations of descriptive statistics will be made, such as skewness, mean, median and standard desviation.
+**Step 01. Data Description:** The missing values will be threated or removed. Finally, a initial data description will carried out to know the data. Therefore some calculations of descriptive statistics will be made, such as skewness, mean, median and standard desviation.
 
-Step 02. Feature Engineering: In this section, a mind map will be created to assist the creation of the hypothesis and the creation of new features. These assumptions will help in exploratory data analysis and may improve the model scores.
+**Step 02. Feature Engineering:** In this section, a mind map will be created to assist the creation of the hypothesis and the creation of new features. These assumptions will help in exploratory data analysis and may improve the model scores.
 
-Step 03. Data Filtering: Data filtering is used to remove columns or rows that are not part of the business. For example, columns with customer ID, hash code or rows with age that does not consist of human age.
+**Step 03. Data Filtering:** Data filtering is used to remove columns or rows that are not part of the business. For example, columns with customer ID, hash code or rows with age that does not consist of human age.
 
-Step 04. Exploratory Data Analysis: The exploratory data analysis section consists of univariate analysis, bivariate analysis and multivariate analysis to assist in understanding of the database.
+**Step 04. Exploratory Data Analysis:** The exploratory data analysis section consists of univariate analysis, bivariate analysis and multivariate analysis to assist in understanding of the database.
 
-Step 05. Data Preparation: In this section, the data will be prepared for machine learning modeling.
+**Step 05. Data Preparation:** In this section, the data will be prepared for machine learning modeling.
 
-Step 06. Feature Selection: Here, I will select the best columns to be used for the training of the machine learning model. This reduces the dimensionality of the database and decreases the chances of overfiting.
+**Step 06. Feature Selection:** Here, I will select the best columns to be used for the training of the machine learning model. This reduces the dimensionality of the database and decreases the chances of overfiting.
 
-Step 07. Machine Learning Modeling: Here, the aim to train the machine learning algorithms and how they can predict the data. For validation the model is trained, validated and applied to cross validation to know the learning capacity of the model.
+**Step 07. Machine Learning Modeling:** Here, the aim to train the machine learning algorithms and how they can predict the data. For validation the model is trained, validated and applied to cross validation to know the learning capacity of the model.
 
-Step 08. Conclusions: This is a conclusion stage which the generation capacity model is tested using unseen data. In addition, some business questions are answered to show the applicability of the model in the business context.
+**Step 08. Conclusions:** This is a conclusion stage which the generation capacity model is tested using unseen data. In addition, some business questions are answered to show the applicability of the model in the business context.
 
-Step 10. Model Deploy: This is the final step of the data science project. So, in this step the flask api is created and the model and the functions are saved to be implemented in the api.
+**Step 10. Model Deploy:** This is the final step of the data science project. So, in this step the flask api is created and the model and the functions are saved to be implemented in the api.
 
-## 5.0 Top 3 Data Insights
+## 5.0 Top Data Insights
 All the fraud amount is greater than 10.000.
-TRUE: The values are greater than 10.000. But it's important to note that the no-fraud values is greater than 100.000 also.
 
-hypothesis2
+<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/pricehist.png">
 
-60% of fraud transaction occours using cash-out-type method.
-FALSE: The fraud transaction occours in transfer and cash-out type. However they're almost the same value.
+<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/tablehist.png">
 
-hypothesis3
+<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/heatmap.png">
 
-Values greater than 100.000 occours using transfers-type method.
-FALSE: The majority transactions occours in trasnfer-type, however transactions greater than 100.000 occour in cash-out and cash-in too.
-
-hypothesis4
+<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/barplot.png">
 
 ## 6.0 Machine Learning Applied
-Here's all the results of the machine learning models with their default parameters. The cross validation method is important to show the capacity of the model to learn.
+Here's all the results of the machine learning models with their default parameters.
 
-Model | LinearRegression | Lasso  | Ridge | Elasticnet
-RMSE: 1013.90 | 1013.87 | 1013.90 | 1533.41
-MAE: 674.02 | 675.07 | 674.05 | 1060.73
-R2 score 93.68 | 93.68 | 93.68 | 85.56
-===================================
+| Model      | LinearRegression | Lasso     | Ridge     | Elasticnet |
+| :---:      | :---:            | :---:     | :---:     | :---:      |   
+| RMSE       | 1013.90          | 1013.87   | 1013.90   | 1533.41    |
+| MAE        | 674.02           | 675.07    | 674.05    | 1060.73    |
+| R2 score   | 93.68            | 93.68     | 93.68     | 85.56      |
+
 The finaL model will be selected by program based on best R2_Score. Below there's a table with the capacity of the model to learn.
 
-## 7.0 Conclusions
+## 7.0 Run Application 
+
+**Step-1:** Create a new envionment
+
+    conda create -p venv python==3.8
+
+**Step-2:** Install the necessary libraries
+
+    pip install -r requirements.txt
+
+**Step-3:** Clone the repository
+
+    git clone https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction.git
+
+**Step-4:** cd in to cloned folder
+
+    cd Diamond_Price_Prediction
+
+**Step-5:** Run application
+
+    python application.py
+
+## 8.0 Conclusions
 The data is extremaly unbalanced, however it was possible to make all the data analysis and create with good scores.
 
 The company may expect a revenue of R$ 57,251,574.44. This result may show the capacity of a project of data science and help the company.
