@@ -34,13 +34,58 @@ Dataset Source Link :
 ## 3.0 Business Assumptions
 Followings assumptions have been made to define the solution strategy for diamind price prediction.
 
-Diamond Prices Reflect Market Demand: The assumption is that diamond prices are influenced by market demand. Factors such as carat size, cut quality, color, clarity, and other characteristics affect the price. It is assumed that customers are willing to pay more for diamonds with desirable attributes.
+1. Diamond Prices Reflect Market Demand: The assumption is that diamond prices are influenced by market demand. Factors such as carat size, cut quality, color, clarity, and other characteristics affect the price. It is assumed that customers are willing to pay more for diamonds with desirable attributes.
 
-Price Consistency: It is assumed that there is a level of consistency in diamond pricing across different regions and markets. While there may be variations due to local factors and market dynamics, the assumption is that overall, diamond prices follow similar trends and patterns.
+2. Price Consistency: It is assumed that there is a level of consistency in diamond pricing across different regions and markets. While there may be variations due to local factors and market dynamics, the assumption is that overall, diamond prices follow similar trends and patterns.
 
-Economic Factors: It is assumed that economic factors, such as inflation rates, consumer purchasing power, and overall economic conditions, have an impact on diamond prices. Changes in these factors may influence the pricing trends for diamonds.
+3. Economic Factors: It is assumed that economic factors, such as inflation rates, consumer purchasing power, and overall economic conditions, have an impact on diamond prices. Changes in these factors may influence the pricing trends for diamonds.
 
-## 4.0 Solution Strategy
+## 4.0 Product Structure
+
+    DiamondPricePrediction
+    ├── README.md
+    ├── application.py
+    ├── artifacts
+    │   ├── model.pkl
+    │   ├── preprocessor.pkl
+    │   ├── raw.csv
+    │   └── train.csv
+    ├── logs
+    │   ├── 05_17_2023_12_55_12.log
+    │   └── 05_17_2023_12_55_14.log
+    ├── notebooks
+    │   ├── EDA.ipynb
+    │   ├── Model Training.ipynb
+    │   └── data
+    │       └── gemstone.csv
+    ├── reports
+    │   └── figures
+    │       ├── api.png
+    │       ├── barplot.png
+    │       ├── diamond-diamond.jpeg
+    │       ├── heatmap.png
+    │       ├── pricehist.png
+    │       └── tablehist.png
+    ├── requirements.txt
+    ├── setup.py
+    ├── src
+    │   ├── components
+    │   │   ├── __pycache__
+    │   │   ├── data_ingestion.py
+    │   │   ├── data_transformation.py
+    │   │   └── model_trainer.py
+    │   ├── exception.py
+    │   ├── logger.py
+    │   ├── pipelines
+    │   │   ├── __pycache__
+    │   │   ├── prediction_pipeline.py
+    │   │   └── training_pipeline.py
+    │   └── utils.py
+    ├── templates
+    │   ├── form.html
+    │   └── index.html
+    
+## 5.0 Solution Strategy
 My solution to solve this problem will be the development of a data science project. This project will have a machine learning model which can predict the price of a diamond based on provided features.
 
 **Step 01. Data Description:** The missing values will be threated or removed. Finally, a initial data description will carried out to know the data. Therefore some calculations of descriptive statistics will be made, such as skewness, mean, median and standard desviation.
@@ -61,18 +106,25 @@ My solution to solve this problem will be the development of a data science proj
 
 **Step 10. Model Deploy:** This is the final step of the data science project. So, in this step the flask api is created and the model and the functions are saved to be implemented in the api.
 
-## 5.0 Top Data Insights
-All the fraud amount is greater than 10.000.
+## 6.0 Top Data Insights
 
 <img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/pricehist.png">
 
-<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/tablehist.png">
+Most diamonds falls under below 5000 price in the dataset and it is heavily sckewed on the right. 
+
+<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/scatter.png">
+
+The price are heavily correlated with price but table value has a random effect on the price. 
 
 <img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/heatmap.png">
 
+x, y, and z variable are highly correlated with each other and with carat variable which indicate multicolinearity of the variable.  
+
 <img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/barplot.png">
 
-## 6.0 Machine Learning Applied
+Catergorical values distribution is not normal which might also be problematic especially incase of linear regression as the algorithms assume the normality of the data.
+
+## 7.0 Machine Learning Applied
 Here's all the results of the machine learning models with their default parameters.
 
 | Model      | LinearRegression | Lasso     | Ridge     | Elasticnet |
@@ -83,7 +135,7 @@ Here's all the results of the machine learning models with their default paramet
 
 The finaL model will be selected by program based on best R2_Score. Below there's a table with the capacity of the model to learn.
 
-## 7.0 Run Application 
+## 8.0 Run Application 
 
 **Step-1:** Create a new envionment
 
@@ -103,21 +155,19 @@ The finaL model will be selected by program based on best R2_Score. Below there'
 
 **Step-5:** Run application
 
-    python application.py
+    python application.py 
 
-## 8.0 Conclusions
-The data is extremaly unbalanced, however it was possible to make all the data analysis and create with good scores.
+<img src="https://github.com/Bhardwaj-Saurabh/Diamond_Price_Prediction/blob/master/reports/figures/api.png">
 
-The company may expect a revenue of R$ 57,251,574.44. This result may show the capacity of a project of data science and help the company.
+## 9.0 Conclusions
+The conclusion of the Diamond Price Prediction project showcases my expertise in data science and machine learning. Through this project, I successfully developed a predictive model that accurately estimates diamond prices based on various attributes such as carat size, cut quality, color, clarity, and more.
 
-9.0 Lessons Learned
-Even when the classes are unbalanced, it's possible to create a model with good scores.
+By leveraging advanced data analysis techniques, I was able to extract meaningful insights from the dataset and build a robust predictive model. The model demonstrated high accuracy in predicting diamond prices, enabling businesses in the diamond industry to make informed pricing decisions.
 
-It is possible to create a model that can classify classes with less than 1% of samples.
+This project highlights my proficiency in data preprocessing, feature engineering, and model development using popular machine learning algorithms. I showcased strong skills in Python programming, data manipulation with libraries like pandas and NumPy, and implementing machine learning models with scikit-learn.
 
-10.0 Next Steps
-Test at most more 10 hypothesis.
+Furthermore, this project demonstrates my ability to work on real-world data science problems and deliver valuable solutions. It showcases my analytical thinking, problem-solving skills, and attention to detail. The successful outcome of the project strengthens my credentials and positions me as a capable data scientist ready to tackle complex business challenges.
 
-Implement oversampling or subsampling techiniques to improve the model scores.
-
-Implement the api on the heroku plataform.
+# 10.0 Next Step
+- Implement the api on the heroku plataform.
+- Try to deploy the model in cloud platform.
